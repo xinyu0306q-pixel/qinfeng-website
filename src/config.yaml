@@ -1,0 +1,66 @@
+site:
+  name: 钦丰卫浴
+  site: 'https://xinyu0306q-pixel.github.io'
+  base: '/qinfeng-website'
+  trailingSlash: false
+
+# Default SEO metadata
+metadata:
+  title:
+    default: 钦丰卫浴 — 近30年卫浴五金源头工厂
+    template: '%s — 钦丰卫浴'
+  description: '钦丰卫浴（余姚市钦丰金属压铸有限公司）始建于1996年，专业制造水龙头、卫浴挂件、花洒软管、编织管、水暖管件与地漏，旗下拥有「帝源」「水中花」品牌，产品远销美国、欧洲、亚洲及澳大利亚。'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: 钦丰卫浴
+    images:
+      - url: '~/assets/images/hero-bathroom.jpg'
+        width: 1600
+        height: 900
+    type: website
+
+i18n:
+  language: zh-CN
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 6
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
