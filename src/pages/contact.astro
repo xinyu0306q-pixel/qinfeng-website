@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: '联系我们',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="联系我们" title="随时欢迎来聊聊" />
+
+  <ContactUs
+    id="form"
+    title="留下您的需求"
+    subtitle="无论是家装选购、工程集采还是经销合作，填写下方表单，卫浴顾问会尽快与您联系。"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: '您的称呼',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: '联系电话',
+      },
+    ]}
+    textarea={{
+      label: '需求描述（如：户型与预算 / 项目类型与数量）',
+    }}
+    disclaimer={{
+      label: '提交即表示您同意我们为联系之目的收集上述信息，信息仅用于业务沟通。',
+    }}
+    description="我们通常会在 1 个工作日内回复。"
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="其他联系方式"
+    items={[
+      {
+        title: '产品咨询',
+        description: '选型建议、价格与库存查询、产品手册领取。',
+      },
+      {
+        title: '工程合作',
+        description: '酒店、公寓、精装房项目集采，提交图纸与清单获取方案报价。',
+      },
+      {
+        title: '售后报修',
+        description: '提供购买凭证与产品型号，服务网点将安排上门处理。',
+      },
+      {
+        title: '服务热线',
+        description: '0574-62386081 / 0574-62386085',
+        icon: 'tabler:headset',
+      },
+      {
+        title: '电子邮箱',
+        description: 'sales@china-qinfeng.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: '公司地址',
+        description: '浙江省余姚市陆埠镇五马工业功能区创新西路 1 号',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>
