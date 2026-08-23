@@ -1,0 +1,203 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '关于我们',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="关于我们"
+    image={{
+      src: '~/assets/images/interior-1.jpg',
+      alt: '钦丰卫浴产品展示',
+    }}
+  >
+    <Fragment slot="title">
+      始于 1996 <br />
+      <span class="text-accent dark:text-white">把卫浴五金做成一门长久的生意</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      余姚市钦丰金属压铸有限公司始建于 1996 年，位于浙江余姚陆埠镇五马工业功能区，是一家集压铸、机加、电镀、组装于一体的卫浴五金制造企业。
+      旗下拥有「帝源」「水中花」两大注册商标，产品涵盖水龙头、卫浴挂件、花洒软管、水暖管件、地漏与不锈钢厨具。
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="用数字认识钦丰"
+    stats={[
+      { title: '创立于', amount: '1996' },
+      { title: '厂区面积', amount: '15000㎡' },
+      { title: '年压铸产能', amount: '1800吨' },
+      { title: '产品远销', amount: '美欧亚澳' },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="我们的产品线"
+    subtitle="从压铸毛坯到电镀成品全流程自主完成，同一品质标准贯穿每个系列。"
+    columns={3}
+    isBeforeContent={true}
+    items={[
+      {
+        title: '水龙头',
+        description: '面盆、厨房、淋浴龙头，精铜重力压铸主体，陶瓷阀芯经久耐用。',
+        icon: 'tabler:wash',
+      },
+      {
+        title: '卫浴挂件',
+        description: '毛巾架、置物架等挂件系列，多层电镀抗氧化，潮湿环境更安心。',
+        icon: 'tabler:layout-board',
+      },
+      {
+        title: '花洒与淋浴管',
+        description: '手持花洒、顶喷与淋浴软管配套供应，出水均匀、接口通用。',
+        icon: 'tabler:droplet',
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    columns={3}
+    isAfterContent={true}
+    items={[
+      {
+        title: '水暖管件',
+        description: '编织管、角阀与连接件规格齐全，耐压防爆，工程家装两相宜。',
+        icon: 'tabler:arrows-shuffle',
+      },
+      {
+        title: '地漏',
+        description: '防臭防虫、排水快易清理，多规格适配不同场景。',
+        icon: 'tabler:filter',
+      },
+      {
+        title: '不锈钢厨具',
+        description: '厨房水槽与不锈钢厨具配套，与龙头组合一站配齐。',
+        icon: 'tabler:tools-kitchen-2',
+      },
+      {
+        title: '工程配套',
+        description: '酒店、公寓、精装房批量供应，支持打样确认与分批交付。',
+        icon: 'tabler:building',
+      },
+      {
+        title: '出口业务',
+        description: 'OEM/ODM 合作，产品远销美欧亚澳，按目的国标准配合认证验货。',
+        icon: 'tabler:world',
+      },
+      {
+        title: '经销支持',
+        description: '为合作伙伴提供培训、物料与售后协同，一起成长。',
+        icon: 'tabler:users',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/bathroom-vanity.jpg',
+      alt: '卫浴产品展示',
+    }}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="探索 · 联合 · 求进"
+    subtitle="六个字的企业文化，是钦丰近三十年的共同准则。"
+    items={[
+      {
+        title: '以市场为导向',
+        description: '市场需求是产品定义的起点，少堆概念，多解决真实使用中的麻烦。',
+      },
+      {
+        title: '严抓质量为基础',
+        description: 'ISO9001 体系贯穿压铸、电镀、组装全流程，不合格不出厂。',
+      },
+      {
+        title: '合作求进',
+        description: '与客户、供应商在互惠互利的基础上长期合作，不做一锤子买卖。',
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="发展里程碑"
+    subtitle="从一家压铸工厂到产品远销海外的卫浴品牌，每一步都走得扎实。"
+    isReversed={true}
+    callToAction={{
+      text: '了解更多',
+      href: '/',
+    }}
+    items={[
+      {
+        title: '1996 · 建厂立业',
+        description: '公司在余姚陆埠镇成立，以金属压铸与水暖管件起步，打下制造底子。',
+        icon: 'tabler:building-factory-2',
+      },
+      {
+        title: '品牌创立',
+        description: '先后注册「帝源」「水中花」两大商标，从代工走向品牌化经营。',
+        icon: 'tabler:award',
+      },
+      {
+        title: '远销海外',
+        description: '通过 ISO9000 认证，产品出口美国、欧洲、亚洲及澳大利亚，国内销售网络遍布各大中城市。',
+        icon: 'tabler:globe',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="我们在哪里"
+    tagline="找到我们"
+    columns={2}
+    items={[
+      {
+        title: '公司总部与工厂',
+        description: '浙江省余姚市陆埠镇五马工业功能区创新西路 1 号',
+      },
+      {
+        title: '欢迎实地考察',
+        description: '工程与经销客户可预约到厂参观压铸、电镀与组装产线，眼见为实。',
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="联系与支持"
+    tagline="联系我们"
+    columns={2}
+    items={[
+      {
+        title: '业务咨询',
+        description: '产品选型、报价、订单进度，欢迎来电或在线留言，工作日及时响应。',
+        icon: 'tabler:messages',
+      },
+      {
+        title: '服务热线',
+        description: '0574-62386081 / 0574-62386085，业务与售后问题直达团队。',
+        icon: 'tabler:headset',
+      },
+    ]}
+  />
+</Layout>

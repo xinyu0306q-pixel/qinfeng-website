@@ -1,0 +1,208 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '产品中心',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="产品中心"
+    title="卫浴五金，一站配齐"
+    subtitle="水龙头、卫浴挂件、花洒软管、编织管与水暖管件、地漏、不锈钢厨具——从压铸到成品全流程自主制造，工程、经销与出口自由组合。"
+    actions={[{ variant: 'primary', text: '获取产品手册', href: '/contact' }]}
+    image={{
+      src: '~/assets/images/faucet.jpg',
+      alt: '钦丰卫浴水龙头产品',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="主要产品系列"
+    subtitle="每个系列都提供多档配置与表面处理，适配不同预算与渠道。"
+    columns={3}
+    items={[
+      {
+        title: '面盆龙头',
+        description: '精铜重力压铸主体，陶瓷阀芯启闭顺滑，起泡器出水柔和防溅。',
+        icon: 'tabler:wash',
+      },
+      {
+        title: '厨房龙头',
+        description: '高抛可旋转设计，抽拉款可选，搭配不锈钢水槽组合供应。',
+        icon: 'tabler:tools-kitchen-2',
+      },
+      {
+        title: '淋浴龙头与花洒',
+        description: '淋浴龙头、手持花洒与顶喷配套，镀层均匀，出水稳定。',
+        icon: 'tabler:droplet',
+      },
+      {
+        title: '淋浴管 · 编织管',
+        description: '不锈钢丝编织内管耐压防爆，双扣结构，长度与接口规格可定制。',
+        icon: 'tabler:arrows-shuffle',
+      },
+      {
+        title: '卫浴挂件',
+        description: '毛巾架、浴巾架、置物架、纸巾盒全系列，多层电镀抗氧化。',
+        icon: 'tabler:layout-board',
+      },
+      {
+        title: '地漏',
+        description: '防臭防虫防返水，排水快易清理，家装与工程多规格可选。',
+        icon: 'tabler:filter',
+      },
+      {
+        title: '角阀与水暖管件',
+        description: '角阀、对丝、弯头等连接件规格齐全，与软管龙头配套出货。',
+        icon: 'tabler:settings',
+      },
+      {
+        title: '不锈钢厨具',
+        description: '不锈钢水槽与厨具配套，与龙头组合一站配齐厨房用水场景。',
+        icon: 'tabler:tools-kitchen-2',
+      },
+      {
+        title: '压铸定制',
+        description: '承接金属压铸件来图来样开发，模具、压铸、机加、电镀一体完成。',
+        icon: 'tabler:wand',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: '真材实料',
+        description: '龙头主体低铅精铜，编织管 304 不锈钢丝，用料写在检测报告里。',
+        icon: 'tabler:wand',
+      },
+      {
+        title: '工艺稳定',
+        description: '压铸、机加、电镀、组装全流程自主完成，批次一致性有保障。',
+        icon: 'tabler:settings',
+      },
+      {
+        title: '安装省心',
+        description: '标准接口与通用规格设计，附安装说明，师傅上手快。',
+        icon: 'tabler:presentation',
+      },
+      {
+        title: '交付可视',
+        description: '批量订单关键节点拍照同步，物流信息实时可查。',
+        icon: 'tabler:carousel-horizontal',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/faucet.jpg',
+      alt: '龙头五金细节',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">产品底气</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: '免费选型咨询',
+        description: '提供项目需求与规格偏好，我们帮您出产品清单与报价，避免买错买多。',
+        icon: 'tabler:clock',
+      },
+      {
+        title: '样品与验厂',
+        description: '工程与经销客户可申请样品，欢迎预约到厂实地考察产线与工艺。',
+        icon: 'tabler:school',
+      },
+      {
+        title: '灵活合作模式',
+        description: '批发、集采、经销、OEM/ODM 多种合作方式，按需选择不捆绑。',
+        icon: 'tabler:coin',
+      },
+      {
+        title: '资料即刻获取',
+        description: '产品手册、价格表与检测资料，联系我们即可领取电子版。',
+        icon: 'tabler:file-download',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/interior-2.jpg',
+      alt: '卫浴空间应用效果',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">服务承诺</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="合作伙伴怎么说"
+    testimonials={[
+      {
+        testimonial: `酒店项目三百多间客房的龙头、挂件和地漏全部由钦丰配套，从打样到分批交付都很顺，镀层质感客人评价很好。`,
+        name: '陈经理',
+        job: '连锁酒店采购负责人',
+        image: {
+          src: '~/assets/images/case-hotel.jpg',
+          alt: '酒店工程案例',
+        },
+      },
+      {
+        testimonial: `代理「水中花」三年，产品线齐全好搭配，培训物料很全，售后响应快，门店回头客明显多了。`,
+        name: '王女士',
+        job: '区域经销商',
+        image: {
+          src: '~/assets/images/showroom.jpg',
+          alt: '门店展厅',
+        },
+      },
+      {
+        testimonial: `精装房项目的五金件选了钦丰，规格定制灵活，交付节点一次没拖，甲方验收很顺利。`,
+        name: '李工',
+        job: '地产项目工程师',
+        image: {
+          src: '~/assets/images/case-apartment.jpg',
+          alt: '精装公寓案例',
+        },
+      },
+    ]}
+    callToAction={{
+      text: '查看更多案例',
+      href: '/about',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: '获取报价',
+        href: '/contact',
+      },
+    ]}
+    title="告诉我们您的需求"
+    subtitle="零售一套、工程百套、出口一柜，都可以先聊聊再决定。"
+  />
+</Layout>
