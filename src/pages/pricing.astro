@@ -1,0 +1,189 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: '合作方案',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="合作方案"
+    title="三种合作方式，总有一款适合您"
+    subtitle="家装零售、工程集采、经销加盟——按需选择，价格透明。"
+  />
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="合作方案一览"
+    subtitle="具体价格以选型清单与合同为准"
+    prices={[
+      {
+        title: '零售配套',
+        subtitle: '适合家庭装修与门店零售',
+        price: '一件起',
+        period: '灵活选购',
+        items: [
+          { description: '龙头、挂件、软管自由搭配' },
+          { description: '免费选型咨询' },
+          { description: '标准接口安装省心' },
+          { description: '表面处理与规格可定制' },
+        ],
+        callToAction: {
+          text: '咨询选购',
+          href: '/contact',
+        },
+      },
+      {
+        title: '工程集采',
+        subtitle: '适合酒店 / 公寓 / 精装房项目',
+        price: '项目制',
+        period: '按批交付',
+        items: [
+          { description: '样品确认后封样生产' },
+          { description: '分批排产按节点交付' },
+          { description: '驻场安装指导可选' },
+          { description: '检测报告随货提供' },
+          { description: '项目专属服务群' },
+        ],
+        callToAction: {
+          text: '提交项目需求',
+          href: '/contact',
+        },
+        hasRibbon: true,
+        ribbonTitle: '热门',
+      },
+      {
+        title: '经销加盟',
+        subtitle: '适合建材渠道与门店',
+        price: '区域制',
+        period: '长期合作',
+        items: [
+          { description: '区域保护政策' },
+          { description: '开业物料与培训支持' },
+          { description: '产品图库与安装视频' },
+          { description: '年度返利与促销协同' },
+        ],
+        callToAction: {
+          text: '申请加盟',
+          href: '/contact',
+        },
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="合作保障"
+    subtitle="把承诺写在明处"
+    columns={2}
+    items={[
+      {
+        title: '透明报价',
+        description: '按选型清单逐项报价，无隐藏费用，合同之外不加价。',
+        icon: 'tabler:stairs',
+      },
+      {
+        title: '封样生产',
+        description: '工程订单先打样封样，大货与样品一致性写入验收标准。',
+        icon: 'tabler:flip-vertical',
+      },
+      {
+        title: '品质保障',
+        description: '出厂全检加抽检双流程，质量问题按合同条款先行赔付。',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: '资料随取',
+        description: '产品手册、检测报告、安装视频与合作政策，签约即可获取。',
+        icon: 'tabler:accessible',
+      },
+      {
+        title: '阶梯政策',
+        description: '采购量越大政策越优，年度累计同样计入返利。',
+        icon: 'tabler:chevrons-up',
+      },
+      {
+        title: '全天候响应',
+        description: '工作日在线客服 + 服务热线，紧急工程问题快速响应。',
+        icon: 'tabler:headset',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="从洽谈到交付的完整流程"
+    tagline="流程透明"
+    isReversed={true}
+    items={[
+      { title: '需求沟通', icon: 'tabler:number-1' },
+      { title: '方案与报价', icon: 'tabler:number-2' },
+      { title: '样品确认', icon: 'tabler:number-3' },
+      { title: '签订合同', icon: 'tabler:number-4' },
+      { title: '排产质检', icon: 'tabler:number-5' },
+      { title: '物流配送', icon: 'tabler:number-6' },
+      { title: '安装验收，进入质保', icon: 'tabler:number-7' },
+    ]}
+    image={{
+      src: '~/assets/images/hotel-bath.jpg',
+      alt: '工程卫浴交付效果',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="合作常见问题"
+    subtitle="关于价格、起订量与政策的高频问题。"
+    columns={1}
+    items={[
+      {
+        title: '工程集采有起订量要求吗？',
+        description: '没有硬性门槛。数量较小的项目按零售价加工程服务费执行，量大从优，具体以报价单为准。',
+      },
+      {
+        title: '可以先看样品再下单吗？',
+        description: '可以。工程与经销客户支持寄样，批量订单建议先打样确认颜色与工艺，样品费大货下单后返还。',
+      },
+      {
+        title: '经销加盟需要什么条件？',
+        description: '有建材渠道或门店资源即可申请，我们将评估区域容量后给出政策，避免同区域恶性竞争。',
+      },
+      {
+        title: '付款方式有哪些？',
+        description: '零售支持线上与到店支付；工程与经销按合同账期执行，支持对公转账。',
+      },
+      {
+        title: '报价之外还有其他费用吗？',
+        description: '没有。物流、安装等费用会在报价阶段逐项列明，签完合同不会再产生隐藏费用。',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="准备好开始合作了吗？"
+    subtitle="留下需求，顾问一个工作日内回复。"
+    actions={[
+      {
+        variant: 'primary',
+        text: '立即咨询',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>
