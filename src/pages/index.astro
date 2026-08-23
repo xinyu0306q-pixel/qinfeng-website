@@ -1,0 +1,360 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: '钦丰卫浴 — 近30年卫浴五金制造 · 水龙头 / 卫浴挂件 / 花洒软管 / 水暖管件',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: '获取报价',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+      { text: '了解产品', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-bathroom.jpg', alt: '钦丰卫浴产品应用场景' }}
+  >
+    <Fragment slot="title">
+      让每一滴水都值得善待
+      <br class="hidden xl:inline" />
+      <span class="text-accent dark:text-white">卫浴五金，源头制造</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">钦丰卫浴</span>（余姚市钦丰金属压铸有限公司）始建于 1996 年，专注水龙头、卫浴挂件、花洒软管与水暖管件的压铸制造。</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">钦丰卫浴：卫浴五金源头工厂</span>
+      旗下拥有「帝源」「水中花」两大注册商标，产品远销美国、欧洲、亚洲及澳大利亚。
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note title="企业文化:" description="探索 · 联合 · 求进 —— 以市场需求为导向，严抓质量为基础" />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="产品系列"
+    title="六大产品线，覆盖厨卫用水场景"
+    subtitle="从压铸毛坯到电镀成品全流程自主完成，门类齐全、品质稳定，适配工程集采、经销批发与出口订单。"
+    items={[
+      {
+        title: '水龙头系列',
+        description: '面盆、厨房、淋浴龙头，精铜重力压铸主体配陶瓷阀芯，启闭顺滑经久耐用。',
+        icon: 'tabler:wash',
+      },
+      {
+        title: '卫浴挂件',
+        description: '毛巾架、置物架、纸巾盒等挂件系列，多层电镀抗氧化，潮湿环境不易锈蚀。',
+        icon: 'tabler:layout-board',
+      },
+      {
+        title: '花洒与淋浴管',
+        description: '手持花洒、顶喷与淋浴软管配套供应，出水均匀，接口通用安装省心。',
+        icon: 'tabler:droplet',
+      },
+      {
+        title: '编织管 · 水暖管件',
+        description: '不锈钢丝编织管、角阀与各类水暖连接件，耐压防爆，规格齐全。',
+        icon: 'tabler:arrows-shuffle',
+      },
+      {
+        title: '地漏系列',
+        description: '防臭防虫地漏，排水快、易清理，工程与家装多规格可选。',
+        icon: 'tabler:filter',
+      },
+      {
+        title: '不锈钢厨具',
+        description: '厨房水槽与不锈钢厨具配套，与龙头组合供应，一站配齐。',
+        icon: 'tabler:tools-kitchen-2',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="工厂实力"
+    title="源头工厂，品质自己说了算"
+    items={[
+      {
+        title: '15000㎡ 自有厂区',
+        description: '压铸、机加、电镀、组装产线自主可控，从原料到成品全程可追溯。',
+      },
+      {
+        title: '年压铸产能 1800 吨',
+        description: '压铸设备与模具配套完善，批量订单排产稳定，交付节点有保障。',
+      },
+      {
+        title: 'ISO9001 质量体系',
+        description: '通过 ISO9000 质量管理体系认证，盐雾、气密、启闭疲劳等检测不合格不出厂。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/factory.jpg',
+      alt: '钦丰卫浴生产基地',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">制造是品牌的底气</h3>
+      用好产品说话，让渠道与消费者都放心
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: '精铜重力压铸',
+        description: '龙头主体低铅精铜重力浇铸，壁厚均匀、组织致密，从结构上杜绝渗漏隐患。',
+      },
+      {
+        title: '多层电镀工艺',
+        description: '铜、镍、铬多层电镀，通过酸性盐雾测试，镀层光亮持久不易起皮。',
+      },
+      {
+        title: '陶瓷阀芯',
+        description: '优质陶瓷阀芯经数十万次启闭测试，开合顺滑，滴水不漏。',
+      },
+      {
+        title: '细节见功夫',
+        description: '起泡器出水柔和防溅，编织管双扣结构耐压防爆，小部件同样按高标准制造。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/detail-craft.jpg',
+      alt: '产品工艺细节',
+    }}
+  >
+    <Fragment slot="content">好的卫浴五金，藏在每天摸到看到的细节里。</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: '工程项目集采',
+        description: '酒店、公寓、精装房批量配套，提供样品确认、排产交付与技术对接支持。',
+      },
+      {
+        title: '经销批发合作',
+        description: '「帝源」「水中花」双品牌产品线齐全，渠道政策稳定，物料培训支持到位。',
+      },
+      {
+        title: '出口 OEM/ODM',
+        description: '长期承接海外订单，熟悉欧美澳市场准入要求，按目的国标准配合认证与验货。',
+      },
+      {
+        title: '售后无忧保障',
+        description: '配件长期供应，质量问题快速响应，用得住也修得到。',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/case-hotel.jpg',
+      alt: '酒店卫浴工程案例',
+    }}
+  >
+    <Fragment slot="content">从一间浴室，到一千间客房。</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="四步开启合作，简单透明"
+    items={[
+      {
+        title: '第一步: <span class="font-medium">需求沟通</span>',
+        description: '告诉我们您的场景——工程集采、经销批发还是出口订单，以及数量与规格要求，我们会给出初步建议。',
+        icon: 'tabler:messages',
+      },
+      {
+        title: '第二步: <span class="font-medium">打样确认</span>',
+        description: '根据需求出具产品清单与报价，支持寄送样品确认工艺、镀层与手感。',
+        icon: 'tabler:checklist',
+      },
+      {
+        title: '第三步: <span class="font-medium">生产质检</span>',
+        description: '订单排产后按批次质检，关键节点拍照同步，交付进度全程可见。',
+        icon: 'tabler:package',
+      },
+      {
+        title: '发货交付',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/showroom.jpg',
+      alt: '钦丰卫浴展厅',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="为什么选择钦丰"
+    subtitle="产品力、交付力、服务力，一个都不能少"
+    tagline="我们的优势"
+    items={[
+      {
+        title: '源头直供',
+        description: '工厂直达客户，没有层层加价，同等品质更具价格竞争力。',
+        icon: 'flat-color-icons:factory',
+      },
+      {
+        title: '近30年经验',
+        description: '1996 年建厂至今，压铸与电镀工艺积累深厚，问题见得多了自然少踩坑。',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: '双品牌运营',
+        description: '「帝源」「水中花」两大注册商标，覆盖不同定位的渠道需求。',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: '柔性定制',
+        description: '表面处理、规格尺寸与包装均可定制，支持来图来样开发。',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: '快速交付',
+        description: '常规型号现货供应，批量订单按合同节点分批交付。',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: '出口经验',
+        description: '产品远销美欧亚澳，熟悉外贸流程与验货标准，沟通顺畅。',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: '样品支持',
+        description: '工程与经销客户可申请样品、预约到厂实地考察，眼见为实再下单。',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: '素材支持',
+        description: '为经销商提供产品图库、价格表与培训资料，卖货更轻松。',
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="新闻与选购指南"
+    information={`在这里了解卫浴五金行业动态、产品选购技巧与保养知识，
+                        帮助您买得明白、用得安心。
+                `}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="常见问题"
+    subtitle="关于产品、下单与售后的高频问题，先在这里找答案。"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: '龙头阀芯和电镀层质保多久？',
+        description: '陶瓷阀芯与电镀层均提供多年质保，正常使用下出现滴漏、镀层起皮等问题可凭购买凭证处理，具体年限以产品系列为准。',
+      },
+      {
+        title: '可以定制表面颜色和规格吗？',
+        description: '可以。镀铬、拉丝镍、枪灰、雅黑等表面处理均可定制，软管长度、接口规格支持按需生产，欢迎来图来样。',
+      },
+      {
+        title: '工程采购的起订量和交付周期是多少？',
+        description: '常规型号可现货直发，批量订单一般 20-40 天分批交付，具体起订量与交期按项目评估，以合同为准。',
+      },
+      {
+        title: '是否支持出口业务？',
+        description: '支持。我们长期承接海外订单，产品远销美国、欧洲、亚洲及澳大利亚，可按目的国标准配合认证与验货，欢迎洽谈 OEM/ODM 合作。',
+      },
+      {
+        title: '可以提供样品吗？',
+        description: '工程与经销客户可申请样品，批量采购也可先打样确认工艺与表面处理，样品费用在大货下单后可返还。',
+      },
+      {
+        title: '如何成为经销商？',
+        description: '欢迎各地水暖建材经销商洽谈代理「帝源」「水中花」品牌，我们提供区域保护、物料培训与售后协同，具体政策请联系招商热线。',
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: '创立于', amount: '1996' },
+      { title: '厂区面积', amount: '15000㎡' },
+      { title: '年压铸产能', amount: '1800吨' },
+      { title: '产品远销', amount: '美欧亚澳' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: '获取报价',
+        href: '/contact',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      好产品，&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">值得一次到位的选择</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      留下您的需求，我们将在 1 个工作日内联系您。<br class="hidden md:inline" />工程集采、经销批发、出口合作，都欢迎聊聊。
+    </Fragment>
+  </CallToAction>
+</Layout>
